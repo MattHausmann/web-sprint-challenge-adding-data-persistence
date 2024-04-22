@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 
     projectDb.get(project_id).then((project) => {
         if(!project) {
-            res.status(400);
+            res.status(400).json();
             return;
         } else {
             db.insert(task).then((result) =>{ 
