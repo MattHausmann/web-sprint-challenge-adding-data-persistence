@@ -13,10 +13,6 @@ function get(id) {
 }
 
 function insert(resource) {
-    for(let key in resource) {
-        console.log(`${key}:${resource[key]}`);
-    }
-    console.log(`inserting ${resource}`);
     return db("resources")
         .insert(resource)
         .then(([id]) => get(id));
